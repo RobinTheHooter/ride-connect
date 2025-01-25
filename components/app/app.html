@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>App Details - RideConnect</title>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>RideConnect</h1>
+      <p>All your mobility needs in one place.</p>
+
+      <button
+        onclick="window.location.href='../../index.html'"
+        class="back-button"
+      >
+        Back to Homepage
+      </button>
+    </header>
+
+    <main class="app-detail">
+      <div class="company-overview">
+        <h2 id="appName">Company Name</h2>
+        <p id="appDescription">Loading company description...</p>
+      </div>
+
+      <div class="download-links">
+        <a href="#" class="download-button" id="androidLink" target="_blank">
+          <img
+            src="../../assets/services/android.png"
+            alt="Android"
+            class="icon"
+          />
+          Download for Android
+        </a>
+        <a href="#" class="download-button" id="iosLink" target="_blank">
+          <img src="../../assets/services/apple.png" alt="iOS" class="icon" />
+          Download for iOS
+        </a>
+      </div>
+
+      <div class="reviews-section">
+        <h2>Reviews</h2>
+        <div id="reviewsList">
+          <!-- Reviews will be populated by JavaScript -->
+        </div>
+
+        <form class="review-form" id="reviewForm">
+          <h3>Write a Review</h3>
+          <div class="rating-input">
+            <label>Rating:</label>
+            <div class="star-rating" data-rating="0">
+              <span class="star" data-value="1">☆</span>
+              <span class="star" data-value="2">☆</span>
+              <span class="star" data-value="3">☆</span>
+              <span class="star" data-value="4">☆</span>
+              <span class="star" data-value="5">☆</span>
+            </div>
+          </div>
+          <textarea
+            name="review"
+            placeholder="Write your review here..."
+            required
+          ></textarea>
+          <button type="submit" class="download-button">Submit Review</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="../data/data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

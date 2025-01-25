@@ -1,0 +1,432 @@
+:root {
+  --secondary-color: #f5f5f5;
+  --text-color: #333;
+  --text-secondary: #666;
+  --transition-speed: 0.3s ease;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --gradient-primary: linear-gradient(135deg, #51019a 0%, #6803c3 100%);
+  --primary-color: rgba(74, 144, 226, 1);
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fc;
+  color: #343a40;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  background: rgb(2, 0, 36);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(74, 2, 97, 1) 57%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(74, 2, 97, 1) 57%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(74, 2, 97, 1) 57%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#4a0261",GradientType=1);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+/* Location Selector Styles */
+.location-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  position: fixed;
+  top: 200px;
+  z-index: 999;
+  padding: 1.25rem;
+  background-color: white;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-speed);
+}
+
+.location-selector select {
+  padding: 0.8rem 2.5rem 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(74, 2, 97, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+      )
+      border-box;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a90e2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.2em;
+  transition: all var(--transition-speed);
+}
+
+.location-selector select:hover,
+.location-selector select:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 4px rgba(74, 2, 97, 0.2);
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(74, 2, 97, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+      )
+      border-box;
+}
+
+#citySelector {
+  /* padding: 10px 15px; */
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(74, 2, 97, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+      )
+      border-box;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+#citySelector:hover {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(74, 2, 97, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+      )
+      border-box;
+  color: #000;
+}
+
+/* Main Content */
+#mainContent {
+  position: relative;
+  top: 300px;
+  padding: 20px;
+  max-width: 1500px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #6803c3;
+  /* margin-bottom: 15px; */
+  text-align: center;
+}
+
+/* Mobility Categories Styles */
+.mobility-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.category {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-speed);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* App grid */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* App items */
+.app-item {
+  text-align: center;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.app-item:hover::before {
+  opacity: 1;
+}
+
+.app-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* App-icon */
+.app-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.75rem;
+  transition: transform var(--transition-speed);
+  border-radius: 12px;
+}
+
+.app-item:hover .app-icon {
+  transform: scale(1.1);
+}
+
+/* Museum Section */
+.museum-section {
+  margin-top: 40px;
+  padding: 2rem;
+}
+
+#museumContent {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.museum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.museum-exhibit {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-speed);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.museum-exhibit:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.exhibit-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform var(--transition-speed);
+}
+
+.museum-exhibit:hover .exhibit-image {
+  transform: scale(1.05);
+}
+
+.exhibit-details {
+  padding: 1.5rem;
+}
+
+.exhibit-details h3 {
+  font-size: 1.25rem;
+  color: #495057;
+  margin-bottom: 0.75rem;
+}
+
+.exhibit-details p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #e9f5ff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.signup-form input[type="email"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.signup-form .button {
+  margin-top: 10px;
+}
+
+.signup-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+
+  background-color: #6803c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+  background-color: #51019a;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  #mainContent {
+    padding: 10px;
+    margin: 0 10px;
+  }
+
+  .mobility-categories,
+  .museum-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .category,
+  .museum-exhibit {
+    padding: 1.25rem;
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.25rem;
+  }
+
+  .location-selector {
+    padding: 0.75rem;
+  }
+
+  #citySelector {
+    max-width: 300px;
+  }
+
+  .signup-form input[type="email"] {
+    max-width: 100%;
+  }
+
+  .exhibit-image {
+    height: 200px;
+  }
+
+  .exhibit-details {
+    padding: 1rem;
+  }
+
+  .exhibit-details h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+  .mobility-categories,
+  .museum-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
